@@ -30,9 +30,9 @@ export function Layout({ children }: { children: ReactNode }) {
       <footer className="mt-20 pb-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="glass-strong rounded-3xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="flex items-center gap-3 text-lavender-500">
-              <SDALogo size={24} variant="icon" className="" />
-              <span className="text-sm font-medium">Igreja Adventista do Sétimo Dia</span>
+            <div className="flex items-center gap-3">
+              <SDALogo size={26} color="lavender" />
+              <span className="text-sm font-medium text-lavender-500">Igreja Adventista do Sétimo Dia</span>
             </div>
             <p className="text-xs text-slate-400 text-center sm:text-right">
               Sistema de Estudo Bíblico · Currículo completo · 34 módulos

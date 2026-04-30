@@ -66,7 +66,7 @@ export function Login() {
 
         <div className="relative z-10 text-center text-white">
           <div className="flex justify-center mb-6 animate-float">
-            <SDALogo size={64} variant="icon" className="text-white/90" />
+            <SDALogo size={72} color="white" />
           </div>
           <h1 className="font-serif text-3xl font-semibold mb-3 text-white">
             Estudo Bíblico
@@ -93,8 +93,8 @@ export function Login() {
 
           {/* Mobile logo */}
           <div className="lg:hidden text-center mb-8">
-            <div className="inline-flex items-center gap-3 text-lavender-600">
-              <SDALogo size={36} variant="icon" />
+            <div className="inline-flex items-center gap-3">
+              <SDALogo size={38} color="lavender" />
               <div className="text-left">
                 <p className="font-serif font-semibold text-slate-700">Estudo Bíblico</p>
                 <p className="text-xs text-lavender-500">Igreja Adventista · IASD</p>
