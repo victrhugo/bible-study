@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply font-sans text-slate-800 antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #F8F7FE 0%, #FEF7F8 55%, #F3F8F5 100%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 { @apply font-serif; }
+
+  p { @apply text-slate-700; }
+
+  ::-webkit-scrollbar       { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-lavender-200 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-lavender-300; }
+}
+
+@layer components {
+  /* ── Glass card ── */
+  .glass {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(153, 139, 226, 0.15);
+  }
+
+  /* ── Gradient text ── */
+  .text-gradient {
+    background: linear-gradient(135deg, #8070D0 0%, #D47784 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-sage {
+    background: linear-gradient(135deg, #538A6C 0%, #8070D0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Verse highlight ── */
+  .verse-block {
+    @apply relative pl-5 py-3 my-3;
+    border-left: 3px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #998BE2, #E5919B) border-box;
+    border-radius: 0 12px 12px 0;
+    background-color: rgba(153, 139, 226, 0.04);
+  }
+
+  /* ── Section card ── */
+  .section-card {
+    @apply glass-strong rounded-2xl shadow-card overflow-hidden transition-all duration-300;
+  }
+
+  .section-card:hover {
+    @apply shadow-card-hover;
+  }
+
+  /* ── Nav link ── */
+  .nav-link {
+    @apply text-sm font-medium text-slate-500 hover:text-lavender-600 transition-colors duration-200 relative;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-lavender-400 rounded-full transition-all duration-300;
+  }
+  .nav-link:hover::after { width: 100%; }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Staggered animation delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
