@@ -7,10 +7,10 @@ interface ProgressBarProps {
 }
 
 const gradients = {
-  lavender: 'from-lavender-400 to-lavender-600',
-  sage:     'from-sage-400 to-sage-600',
-  blush:    'from-blush-300 to-blush-500',
-  warm:     'from-lavender-400 via-blush-400 to-blush-500',
+  lavender: 'from-lavender-500 to-lavender-400',
+  sage:     'from-sage-500 to-sage-400',
+  blush:    'from-blush-500 to-blush-400',
+  warm:     'from-lavender-600 to-gold-400',
 }
 
 const heights = {
@@ -26,15 +26,15 @@ export function ProgressBar({
   size = 'md',
   variant = 'lavender',
 }: ProgressBarProps) {
-  const pct = Math.min(100, Math.max(0, Math.round(value)))
-  const h   = heights[size]
+  const pct  = Math.min(100, Math.max(0, Math.round(value)))
+  const h    = heights[size]
   const grad = gradients[variant]
 
   return (
     <div className="w-full">
       {(label || showPercent) && (
         <div className="flex justify-between items-center mb-1.5">
-          {label     && <span className="text-xs font-medium text-slate-500">{label}</span>}
+          {label       && <span className="text-xs font-medium text-slate-500">{label}</span>}
           {showPercent && <span className="text-xs font-semibold text-lavender-600">{pct}%</span>}
         </div>
       )}
@@ -57,11 +57,13 @@ export function CircularProgress({ value, size = 48 }: { value: number; size?: n
   return (
     <div className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
       <svg width={size} height={size} className="-rotate-90">
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#E1DCF8" strokeWidth="5" />
+        {/* Track */}
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#D6E2EF" strokeWidth="5" />
+        {/* Progress */}
         <circle
           cx={size / 2} cy={size / 2} r={r}
           fill="none"
-          stroke="url(#grad)"
+          stroke="url(#navyGold)"
           strokeWidth="5"
           strokeLinecap="round"
           strokeDasharray={circ}
@@ -69,9 +71,9 @@ export function CircularProgress({ value, size = 48 }: { value: number; size?: n
           className="transition-all duration-700"
         />
         <defs>
-          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#B1A6E9" />
-            <stop offset="100%" stopColor="#E5919B" />
+          <linearGradient id="navyGold" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stopColor="#2A64A0" />
+            <stop offset="100%" stopColor="#C09020" />
           </linearGradient>
         </defs>
       </svg>

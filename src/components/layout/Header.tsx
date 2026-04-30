@@ -27,7 +27,7 @@ export function Header() {
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 group">
-              <SDALogo size={32} color="lavender" className="group-hover:opacity-80 transition-opacity" />
+              <SDALogo size={32} color="natural" className="group-hover:opacity-80 transition-opacity" />
               <div className="flex flex-col leading-tight">
                 <span className="font-serif font-semibold text-slate-700 text-sm leading-none">
                   Estudo Bíblico

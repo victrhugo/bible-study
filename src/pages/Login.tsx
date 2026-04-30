@@ -59,7 +59,7 @@ export function Login() {
   return (
     <div className="min-h-screen flex" style={{ background: 'linear-gradient(135deg, #F8F7FE 0%, #FEF7F8 55%, #F3F8F5 100%)' }}>
       {/* Left panel — decorative (hidden mobile) */}
-      <div className="hidden lg:flex lg:w-5/12 bg-gradient-to-br from-lavender-600 via-lavender-500 to-blush-400 flex-col items-center justify-center p-12 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-5/12 bg-gradient-to-br from-lavender-800 via-lavender-700 to-lavender-600 flex-col items-center justify-center p-12 relative overflow-hidden">
         {/* Decorative circles */}
         <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-white/5 -translate-x-1/3 -translate-y-1/3" />
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-white/5 translate-x-1/3 translate-y-1/3" />
@@ -94,7 +94,7 @@ export function Login() {
           {/* Mobile logo */}
           <div className="lg:hidden text-center mb-8">
             <div className="inline-flex items-center gap-3">
-              <SDALogo size={38} color="lavender" />
+              <SDALogo size={38} color="natural" />
               <div className="text-left">
                 <p className="font-serif font-semibold text-slate-700">Estudo Bíblico</p>
                 <p className="text-xs text-lavender-500">Igreja Adventista · IASD</p>

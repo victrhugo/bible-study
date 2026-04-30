@@ -2,8 +2,8 @@ import type { BlockLevel } from '../../types'
 
 const levelStyles: Record<BlockLevel, string> = {
   'iniciante':     'bg-sage-100 text-sage-700 border border-sage-200',
-  'intermediário': 'bg-gold-300/30 text-gold-600 border border-gold-300/50',
-  'avançado':      'bg-blush-100 text-blush-700 border border-blush-200',
+  'intermediário': 'bg-gold-300/30 text-gold-600 border border-gold-300/60',
+  'avançado':      'bg-lavender-100 text-lavender-700 border border-lavender-200',
 }
 
 export function LevelBadge({ level }: { level: BlockLevel }) {

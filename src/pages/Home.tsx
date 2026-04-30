@@ -174,7 +174,7 @@ export function Home() {
       {/* ── CTA visitante ────────────────────────────────────────────────── */}
       {!user && (
         <section className="mt-16 animate-slide-up delay-300">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-lavender-600 via-lavender-500 to-blush-400 p-8 sm:p-12 text-center shadow-medium">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-lavender-800 via-lavender-700 to-lavender-600 p-8 sm:p-12 text-center shadow-medium">
             <div className="absolute inset-0 pointer-events-none">
               <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 translate-x-1/3 -translate-y-1/3" />
               <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-white/5 -translate-x-1/3 translate-y-1/3" />

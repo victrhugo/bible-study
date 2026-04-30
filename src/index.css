@@ -9,7 +9,7 @@
     @apply font-sans text-slate-800 antialiased;
     font-size: 1rem;
     line-height: 1.6;
-    background: linear-gradient(135deg, #F8F7FE 0%, #FEF7F8 55%, #F3F8F5 100%);
+    background: linear-gradient(150deg, #F6F4F0 0%, #F2F0EB 60%, #EEF2EE 100%);
     min-height: 100vh;
   }
 
@@ -19,36 +19,36 @@
 
   ::-webkit-scrollbar       { width: 5px; height: 5px; }
   ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { @apply bg-lavender-200 rounded-full; }
-  ::-webkit-scrollbar-thumb:hover { @apply bg-lavender-300; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-400; }
 }
 
 @layer components {
   /* ── Glass card ── */
   .glass {
-    background: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.90);
   }
 
   .glass-strong {
-    background: rgba(255, 255, 255, 0.88);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(153, 139, 226, 0.15);
+    border: 1px solid rgba(30, 58, 95, 0.08);
   }
 
   /* ── Gradient text ── */
   .text-gradient {
-    background: linear-gradient(135deg, #8070D0 0%, #D47784 100%);
+    background: linear-gradient(135deg, #1E3A5F 0%, #C09020 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-sage {
-    background: linear-gradient(135deg, #538A6C 0%, #8070D0 100%);
+    background: linear-gradient(135deg, #38694C 0%, #1E3A5F 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -59,9 +59,9 @@
     @apply relative pl-5 py-3 my-3;
     border-left: 3px solid transparent;
     background: linear-gradient(white, white) padding-box,
-                linear-gradient(135deg, #998BE2, #E5919B) border-box;
+                linear-gradient(135deg, #1E3A5F, #C09020) border-box;
     border-radius: 0 12px 12px 0;
-    background-color: rgba(153, 139, 226, 0.04);
+    background-color: rgba(30, 58, 95, 0.03);
   }
 
   /* ── Section card ── */
@@ -79,7 +79,7 @@
   }
   .nav-link::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-lavender-400 rounded-full transition-all duration-300;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-lavender-500 rounded-full transition-all duration-300;
   }
   .nav-link:hover::after { width: 100%; }
 }
