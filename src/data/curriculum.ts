@@ -1,4 +1,5 @@
 import type { Block, Module, Study } from '../types'
+import { STUDY_CONTENT } from './studyContent'
 
 // ─── Blocks ───────────────────────────────────────────────────────────────────
 
@@ -1296,7 +1297,10 @@ export function getStudiesByModule(moduleId: string): Study[] {
 }
 
 export function getStudy(id: string): Study | undefined {
-  return STUDIES.find(s => s.id === id)
+  const study = STUDIES.find(s => s.id === id)
+  if (!study) return undefined
+  const content = STUDY_CONTENT[id] ?? study.content
+  return content ? { ...study, content } : study
 }
 
 export const TOTAL_STUDIES = STUDIES.length
