@@ -46,7 +46,7 @@ export function Home() {
         </h1>
 
         <p className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto mb-9 leading-relaxed font-medium">
-          Um currículo progressivo — do iniciante ao avançado — construído sobre a doutrina adventista e a Palavra de Deus.
+          Mergulhe nas Escrituras com profundidade — cada estudo abre o texto bíblico em contexto, doutrina e aplicação para a vida.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
