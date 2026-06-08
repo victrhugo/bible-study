@@ -32,14 +32,14 @@ export function Header() {
                 to="/blocos"
                 className={`nav-link ${isActive('/bloco') || isActive('/blocos') ? 'text-lavender-700' : ''}`}
               >
-                Blocos
+                Biblioteca
               </Link>
               {user && (
                 <Link
                   to="/perfil"
                   className={`nav-link ${isActive('/perfil') ? 'text-lavender-700' : ''}`}
                 >
-                  Meu progresso
+                  Meu estudo
                 </Link>
               )}
             </nav>
@@ -104,7 +104,7 @@ export function Header() {
               className="flex items-center rounded-2xl px-4 py-3 font-semibold text-ink-600 transition-all hover:bg-paper-50 hover:text-lavender-700"
               onClick={() => setOpen(false)}
             >
-              Blocos de estudo
+              Explorar biblioteca
             </Link>
             {user && (
               <Link
@@ -112,7 +112,7 @@ export function Header() {
                 className="flex items-center rounded-2xl px-4 py-3 font-semibold text-ink-600 transition-all hover:bg-paper-50 hover:text-lavender-700"
                 onClick={() => setOpen(false)}
               >
-                Meu progresso
+                Meu estudo
               </Link>
             )}
             <div className="mt-2 border-t border-blush-200/70 pt-2">
