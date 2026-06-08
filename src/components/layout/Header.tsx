@@ -20,68 +20,55 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40">
-      {/* Glassmorphism bar */}
-      <div className="glass border-b border-lavender-100/60 shadow-soft">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="glass shadow-soft">
+        <div className="page-frame">
           <div className="flex items-center justify-between h-16">
-
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-2.5 group">
-              <SDALogo size={32} color="natural" className="group-hover:opacity-80 transition-opacity" />
-              <div className="flex flex-col leading-tight">
-                <span className="font-serif font-semibold text-slate-700 text-sm leading-none">
-                  Estudo Bíblico
-                </span>
-                <span className="text-xs text-lavender-500 leading-none mt-0.5 font-medium tracking-wide">
-                  Igreja Adventista · IASD
-                </span>
-              </div>
+            <Link to="/" className="group flex items-center">
+              <SDALogo size={44} color="navy" className="transition-opacity group-hover:opacity-80" />
             </Link>
 
-            {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-6">
               <Link
                 to="/blocos"
-                className={`nav-link ${isActive('/bloco') || isActive('/blocos') ? 'text-lavender-600' : ''}`}
+                className={`nav-link ${isActive('/bloco') || isActive('/blocos') ? 'text-lavender-700' : ''}`}
               >
                 Blocos
               </Link>
               {user && (
                 <Link
                   to="/perfil"
-                  className={`nav-link ${isActive('/perfil') ? 'text-lavender-600' : ''}`}
+                  className={`nav-link ${isActive('/perfil') ? 'text-lavender-700' : ''}`}
                 >
                   Meu progresso
                 </Link>
               )}
             </nav>
 
-            {/* User area */}
             <div className="hidden md:flex items-center gap-3">
               {user ? (
                 <>
                   <Link
                     to="/perfil"
-                    className="flex items-center gap-2.5 group"
+                    className="flex items-center gap-2.5 rounded-full border border-transparent px-2 py-1 group hover:border-blush-200"
                   >
                     {user.photoURL ? (
                       <img
                         src={user.photoURL}
                         alt=""
-                        className="h-8 w-8 rounded-full ring-2 ring-lavender-200 group-hover:ring-lavender-400 transition-all"
+                        className="h-8 w-8 rounded-full ring-2 ring-blush-200 transition-all group-hover:ring-gold-300"
                       />
                     ) : (
-                      <div className="h-8 w-8 rounded-full bg-gradient-lavender flex items-center justify-center shadow-soft">
-                        <User className="h-4 w-4 text-white" />
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-lavender-700 shadow-soft">
+                        <User className="h-4 w-4 text-paper-50" />
                       </div>
                     )}
-                    <span className="text-sm font-semibold text-slate-700 group-hover:text-lavender-700 transition-colors">
+                    <span className="text-sm font-semibold text-ink-600 transition-colors group-hover:text-lavender-700">
                       {user.displayName?.split(' ')[0]}
                     </span>
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="p-1.5 text-slate-400 hover:text-blush-500 hover:bg-blush-50 rounded-xl transition-all duration-200"
+                    className="rounded-xl p-2 text-ink-300 transition-all duration-200 hover:bg-paper-50 hover:text-blush-600"
                     title="Sair"
                   >
                     <LogOut className="h-4 w-4" />
@@ -90,17 +77,18 @@ export function Header() {
               ) : (
                 <Link
                   to="/login"
-                  className="bg-gradient-lavender text-white px-5 py-2 rounded-xl text-sm font-medium shadow-soft hover:shadow-medium hover:brightness-105 transition-all duration-200 active:scale-95"
+                  className="rounded-xl border border-lavender-700 bg-lavender-700 px-5 py-2 text-sm font-semibold text-paper-50 shadow-soft transition-all duration-200 hover:bg-lavender-800"
                 >
                   Entrar
                 </Link>
               )}
             </div>
 
-            {/* Mobile toggle */}
             <button
-              className="md:hidden p-2 text-slate-500 hover:text-lavender-600 hover:bg-lavender-50 rounded-xl transition-all"
+              className="rounded-xl p-2 text-ink-400 transition-all hover:bg-paper-50 hover:text-lavender-700 md:hidden"
               onClick={() => setOpen(!open)}
+              aria-expanded={open}
+              aria-label={open ? 'Fechar menu' : 'Abrir menu'}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -108,13 +96,12 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile drawer */}
       {open && (
-        <div className="md:hidden glass-strong border-b border-lavender-100 animate-fade-in">
-          <div className="max-w-6xl mx-auto px-4 py-4 space-y-1">
+        <div className="glass-strong border-b border-blush-200/70 animate-fade-in md:hidden">
+          <div className="page-frame space-y-1 py-4">
             <Link
               to="/blocos"
-              className="flex items-center px-4 py-3 rounded-2xl text-slate-700 font-medium hover:bg-lavender-50 hover:text-lavender-700 transition-all"
+              className="flex items-center rounded-2xl px-4 py-3 font-semibold text-ink-600 transition-all hover:bg-paper-50 hover:text-lavender-700"
               onClick={() => setOpen(false)}
             >
               Blocos de estudo
@@ -122,17 +109,17 @@ export function Header() {
             {user && (
               <Link
                 to="/perfil"
-                className="flex items-center px-4 py-3 rounded-2xl text-slate-700 font-medium hover:bg-lavender-50 hover:text-lavender-700 transition-all"
+                className="flex items-center rounded-2xl px-4 py-3 font-semibold text-ink-600 transition-all hover:bg-paper-50 hover:text-lavender-700"
                 onClick={() => setOpen(false)}
               >
                 Meu progresso
               </Link>
             )}
-            <div className="pt-2 border-t border-lavender-100 mt-2">
+            <div className="mt-2 border-t border-blush-200/70 pt-2">
               {user ? (
                 <button
                   onClick={handleLogout}
-                  className="w-full flex items-center gap-2 px-4 py-3 rounded-2xl text-blush-600 font-medium hover:bg-blush-50 transition-all"
+                  className="flex w-full items-center gap-2 rounded-2xl px-4 py-3 font-semibold text-blush-700 transition-all hover:bg-cream-50"
                 >
                   <LogOut className="h-4 w-4" />
                   Sair da conta
@@ -140,7 +127,7 @@ export function Header() {
               ) : (
                 <Link
                   to="/login"
-                  className="block px-4 py-3 rounded-2xl text-lavender-700 font-medium hover:bg-lavender-50 transition-all"
+                  className="block rounded-2xl px-4 py-3 font-semibold text-lavender-700 transition-all hover:bg-paper-50"
                   onClick={() => setOpen(false)}
                 >
                   Entrar

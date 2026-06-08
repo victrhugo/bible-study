@@ -5,24 +5,24 @@ type Size    = 'sm' | 'md' | 'lg' | 'xl'
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-gradient-lavender text-white shadow-soft hover:shadow-medium hover:brightness-105 focus:ring-lavender-400',
+    'bg-lavender-700 text-paper-50 border border-lavender-700 hover:bg-lavender-800 focus:ring-lavender-300 shadow-soft',
   secondary:
-    'bg-white text-lavender-700 border border-lavender-200 hover:bg-lavender-50 hover:border-lavender-300 shadow-soft focus:ring-lavender-400',
+    'bg-white text-lavender-700 border border-blush-200 hover:bg-paper-50 hover:border-lavender-200 focus:ring-lavender-200 shadow-soft',
   ghost:
-    'text-slate-500 hover:bg-lavender-50 hover:text-lavender-700 focus:ring-lavender-300',
+    'text-ink-500 hover:bg-paper-50 hover:text-lavender-700 focus:ring-lavender-200',
   danger:
-    'bg-rose-500 text-white hover:bg-rose-600 shadow-soft focus:ring-rose-400',
+    'bg-blush-700 text-paper-50 border border-blush-700 hover:bg-blush-800 shadow-soft focus:ring-blush-300',
   sage:
-    'bg-gradient-sage text-white shadow-soft hover:shadow-medium hover:brightness-105 focus:ring-sage-400',
+    'bg-sage-600 text-paper-50 border border-sage-700 hover:bg-sage-700 shadow-soft focus:ring-sage-300',
   gold:
-    'bg-gradient-warm text-white shadow-soft hover:shadow-medium hover:brightness-105 focus:ring-gold-400',
+    'bg-gold-500 text-lavender-900 border border-gold-500 hover:bg-gold-400 shadow-soft focus:ring-gold-300',
 }
 
 const sizes: Record<Size, string> = {
-  sm:  'px-3.5 py-1.5 text-xs rounded-xl',
+  sm:  'px-3.5 py-2 text-xs rounded-xl',
   md:  'px-5 py-2.5 text-sm rounded-xl',
-  lg:  'px-7 py-3 text-sm rounded-2xl',
-  xl:  'px-8 py-4 text-base rounded-2xl',
+  lg:  'px-6 py-3 text-sm rounded-2xl',
+  xl:  'px-7 py-3.5 text-base rounded-2xl',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -46,11 +46,11 @@ export function Button({
       {...props}
       disabled={disabled || loading}
       className={`
-        inline-flex items-center justify-center gap-2 font-medium
+        inline-flex items-center justify-center gap-2 font-semibold tracking-[0.01em]
         transition-all duration-200 ease-out
         focus:outline-none focus:ring-2 focus:ring-offset-2
         disabled:opacity-50 disabled:cursor-not-allowed
-        active:scale-[0.97]
+        active:translate-y-px
         ${variants[variant]} ${sizes[size]} ${className}
       `}
     >

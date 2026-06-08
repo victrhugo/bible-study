@@ -4,38 +4,30 @@ import { SDALogo } from '../ui/SDALogo'
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #F8F7FE 0%, #FEF7F8 55%, #F3F8F5 100%)' }}>
-      {/* Decorative orbs */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
-        <div
-          className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-20"
-          style={{ background: 'radial-gradient(circle, #ADC5DF 0%, transparent 70%)' }}
-        />
-        <div
-          className="absolute top-1/3 -left-32 w-80 h-80 rounded-full opacity-15"
-          style={{ background: 'radial-gradient(circle, #E6D9C2 0%, transparent 70%)' }}
-        />
-        <div
-          className="absolute bottom-20 right-1/4 w-64 h-64 rounded-full opacity-10"
-          style={{ background: 'radial-gradient(circle, #C3D7CA 0%, transparent 70%)' }}
-        />
+    <div className="page-shell">
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 opacity-40 bg-grid-faint" />
+        <div className="absolute left-0 right-0 top-0 h-48 bg-gradient-to-b from-gold-300/10 to-transparent" />
       </div>
 
       <Header />
 
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+      <main className="page-frame py-8 sm:py-10 animate-fade-in">
         {children}
       </main>
 
-      <footer className="mt-20 pb-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-strong rounded-3xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <footer className="mt-20 pb-10">
+        <div className="page-frame">
+          <div className="surface-muted px-6 py-5 sm:px-8 sm:py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
-              <SDALogo size={26} color="natural" />
-              <span className="text-sm font-medium text-lavender-500">Igreja Adventista do Sétimo Dia</span>
+              <SDALogo size={44} color="navy" />
+              <div>
+                <p className="text-sm font-semibold text-lavender-800">Biblioteca Digital de Estudo</p>
+                <p className="text-xs uppercase tracking-[0.16em] text-ink-400">Currículo bíblico organizado para leitura séria</p>
+              </div>
             </div>
-            <p className="text-xs text-slate-400 text-center sm:text-right">
-              Sistema de Estudo Bíblico · Currículo completo · 34 módulos
+            <p className="max-w-md text-xs leading-6 text-ink-400 text-center sm:text-right">
+              Currículo completo em uma experiência de leitura orientada à reverência, clareza e aprofundamento bíblico.
             </p>
           </div>
         </div>

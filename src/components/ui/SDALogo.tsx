@@ -1,11 +1,12 @@
 import type { CSSProperties } from 'react'
-import logoSrc from '../../assets/logo.png'
+import logoSrc from '../../assets/logo-iasd.png'
 
 type LogoColor = 'natural' | 'white' | 'navy'
 
 interface SDALogoProps {
-  size?:      number
-  color?:     LogoColor
+  size?: number
+  width?: number
+  color?: LogoColor
   className?: string
 }
 
@@ -13,24 +14,23 @@ interface SDALogoProps {
 // - multiply: white bg disappears on any light surface, black logo stays sharp
 // - screen + invert: black logo becomes white, bg blends away on dark surfaces
 const styles: Record<LogoColor, CSSProperties> = {
-  natural: { filter: 'none',       mixBlendMode: 'multiply' },
-  white:   { filter: 'invert(1)',  mixBlendMode: 'screen'   },
+  natural: { filter: 'none' },
+  white:   { filter: 'invert(1)' },
   navy:    {
-    filter:       'brightness(0) saturate(100%) invert(16%) sepia(55%) saturate(700%) hue-rotate(195deg) brightness(85%)',
-    mixBlendMode: 'multiply',
+    filter: 'brightness(0) saturate(100%) invert(15%) sepia(29%) saturate(985%) hue-rotate(173deg) brightness(92%) contrast(93%)',
   },
 }
 
-export function SDALogo({ size = 32, color = 'natural', className = '' }: SDALogoProps) {
+export function SDALogo({ size = 32, width, color = 'natural', className = '' }: SDALogoProps) {
   return (
     <img
       src={logoSrc}
-      alt="Igreja Adventista do Sétimo Dia"
-      width={size}
+      alt="Logo do Estudo Bíblico"
+      width={width}
       height={size}
       draggable={false}
-      className={`object-contain select-none flex-shrink-0 ${className}`}
-      style={{ ...styles[color], width: size, height: size, minWidth: size, minHeight: size }}
+      className={`block h-auto max-w-none select-none flex-shrink-0 ${className}`}
+      style={{ ...styles[color], height: size, width: width ?? 'auto' }}
     />
   )
 }
