@@ -6,6 +6,7 @@ import { BLOCKS, STUDIES } from '../data/curriculum'
 import { ProgressBar } from '../components/ui/ProgressBar'
 import { LevelBadge } from '../components/ui/Badge'
 import { Layout } from '../components/layout/Layout'
+import { SDALogo } from '../components/ui/SDALogo'
 
 const accentStyles: Record<string, string> = {
   A: 'border-lavender-200 bg-lavender-50/60',
@@ -33,6 +34,7 @@ export function Home() {
     <Layout>
       <section className="grid gap-8 border-b border-blush-200/70 pb-12 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
         <div className="animate-slide-up">
+          <SDALogo size={56} color="navy" className="mb-6" />
           <p className="eyebrow mb-4">Estudo bíblico com profundidade</p>
           <h1 className="text-display max-w-3xl text-5xl leading-none sm:text-6xl lg:text-[4.5rem]">
             Uma biblioteca digital para leitura séria das Escrituras.

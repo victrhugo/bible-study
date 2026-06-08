@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import logoSrc from '../../assets/logo-iasd.png'
+import logoSrc from '../../assets/logo.png'
 
 type LogoColor = 'natural' | 'white' | 'navy'
 
